@@ -9,14 +9,14 @@ const PageWrapper = styled.div`
   width: 1440px;
   height: 1080px;
   background: #FFFFFF;
-  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.6);
   border-radius: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   @media (max-width: 480px) {
-    width: 375px;
+    width: auto;
   }
 
 `
@@ -42,7 +42,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
 
   @media (max-width: 480px) {
-    width: auto;
+    padding-left: 24px;
   }
 
 `
