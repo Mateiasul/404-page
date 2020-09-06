@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+}
+module.exports = {
+  pathPrefix: "/404-page",
   plugins: [`gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-fonts`,

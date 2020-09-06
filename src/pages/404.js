@@ -169,8 +169,8 @@ const PageFooter = styled.p`
   color: #333333;
 
   @media (max-width: 480px) {
-  left: 75px;
-  top: 890px;
+    left: 75px;
+    top: 990px;
   }
 
 
