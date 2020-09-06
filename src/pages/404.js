@@ -179,6 +179,7 @@ const PageFooter = styled.p`
 `
 
 export default function Home ({ data }) {
+  console.log(data);
   const sources = [
     data.file.mobileImage.fixed,
     {
@@ -189,7 +190,7 @@ export default function Home ({ data }) {
 
   return (
   <PageWrapper>
-    {/* <PageTitle>404 not found</PageTitle> */}
+    <PageTitle>404 not found</PageTitle>
     <Wrapper>
       <ScareCrowWrapper>
         <Img
