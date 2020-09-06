@@ -18,7 +18,7 @@ const PageWrapper = styled.div`
 
   @media (max-width: 480px) {
     width: 375px;
-    height: 949px;  
+    height: 100%;
   }
 
 `
@@ -45,7 +45,6 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 480px) {
     width: 100%;
-    margin-left: 24px;
   }
 
 `
@@ -169,16 +168,17 @@ const PageFooter = styled.p`
   color: #333333;
 
   @media (max-width: 480px) {
-    left: 75px;
-    top: 990px;
+    margin: auto;
+    margin-top: 100px;
+    position: relative;
+    left: unset;
+    top: unset;
   }
 
 
 `
 
 export default function Home ({ data }) {
-  console.log(data)
-
   const sources = [
     data.file.mobileImage.fixed,
     {
@@ -189,7 +189,7 @@ export default function Home ({ data }) {
 
   return (
   <PageWrapper>
-    <PageTitle>404 not found</PageTitle>
+    {/* <PageTitle>404 not found</PageTitle> */}
     <Wrapper>
       <ScareCrowWrapper>
         <Img
@@ -202,8 +202,8 @@ export default function Home ({ data }) {
         <Description>The page you are looking for might be removed or is temporarily unavailable</Description>
         <Cta href="/" type="button">Back to Homepage</Cta>
       </ContentWrapper>
+      <PageFooter>mateipotcovaru@DevChallenges.io</PageFooter>
     </Wrapper>
-    <PageFooter>mateipotcovaru@DevChallenges.io</PageFooter>
   </PageWrapper>
   );
 }
