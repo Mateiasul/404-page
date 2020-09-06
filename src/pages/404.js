@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 
 const PageWrapper = styled.div`
   margin: auto;
@@ -18,7 +17,6 @@ const PageWrapper = styled.div`
 
   @media (max-width: 480px) {
     width: 375px;
-    height: 100%;
   }
 
 `
@@ -44,7 +42,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
 
   @media (max-width: 480px) {
-    width: 100%;
+    width: auto;
   }
 
 `
@@ -155,7 +153,6 @@ const PageTitle = styled.p`
 
 const PageFooter = styled.p`
   position: absolute;
-  width: 226px;
   height: 17px;
   left: 607px;
   top: 1024px;
