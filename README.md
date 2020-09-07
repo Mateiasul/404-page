@@ -6,7 +6,9 @@
   <a href="https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY"> The design and challenge were part of this amazzing website
   </a>
 </p>
-
+<p align="center">
+  <a href="https://mateiasul.github.io/404-page-example/404">View this amazing piece of work in ACTION</a>
+</p>
 
 ##  Quick start
 
