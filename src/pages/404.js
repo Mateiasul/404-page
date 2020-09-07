@@ -55,6 +55,14 @@ const ScareCrowWrapper = styled.div`
   height: 100%;
   display: flex;
 
+  .gatsby-image-wrapper {
+    width: 539px;
+    @media (max-width: 480px) {
+      width: 286px;
+      height: 238px;
+    }
+  }
+
   @media (max-width: 480px) {
     width: 100%;
     margin-bottom: 60px;
@@ -85,7 +93,6 @@ const Cta = styled.a`
 
 const Title = styled.h3`
   width: 586px;
-  height: 190px;
   font-family: Space Mono;
   font-style: normal;
   font-weight: 700;
@@ -96,10 +103,9 @@ const Title = styled.h3`
 
   color: #333333;
 
-  /* I have bad news for you */
   @media (max-width: 480px) {
-    width: 350px;
-    height: 142px;  
+    max-width: 350px;
+    width: 100%;
     font-size: 48px;
     line-height: 71px;
   }
@@ -119,7 +125,8 @@ const Description = styled.p`
   color: #4F4F4F;
 
   @media (max-width: 480px) {
-    width: 328px;
+    max-width: 328px;
+    width: 100%;
     height: 81px;
     font-size: 18px;
     line-height: 27px;
@@ -178,13 +185,15 @@ const PageFooter = styled.p`
 
 export default function Home ({ data }) {
   console.log(data);
-  const sources = [
-    data.file.mobileImage.fixed,
-    {
-      ...data.file.desktopImage.fixed,
-      media: `(min-width: 480px)`,
-    },
-  ]
+  // const sources = [
+  //   data.file.mobileImage.fixed,
+  //   {
+  //     ...data.file.desktopImage.fixed,
+  //     media: `(min-width: 480px)`,
+  //   },
+  // ]
+  // const sources = [data.file.mobileImage.fixed,data.file.mobileImage1.fluid,data.file.desktopImage.fixed]
+  // console.log(sources);
 
   return (
   <PageWrapper>
@@ -192,7 +201,7 @@ export default function Home ({ data }) {
     <Wrapper>
       <ScareCrowWrapper>
         <Img
-          fixed={sources}
+          fluid={data.file.mobileImage1.fluid}
           alt="A scarecrow scaring people away"
         />
       </ScareCrowWrapper>
@@ -210,14 +219,10 @@ export default function Home ({ data }) {
 export const imgQuery = graphql`
   query MyQuery {
     file(relativePath: {eq: "Scarecrow.png"}) {
-      desktopImage: childImageSharp {
-        fixed(width: 539, height: 447) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-      mobileImage: childImageSharp {
-        fixed(width: 286, height: 238) {
-          ...GatsbyImageSharpFixed
+      mobileImage1: childImageSharp {
+        fluid(maxWidth: 539, quality: 100) {
+          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluidLimitPresentationSize
         }
       }
     }
