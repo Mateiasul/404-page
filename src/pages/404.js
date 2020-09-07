@@ -42,6 +42,7 @@ const ContentWrapper = styled.div`
   flex-direction: column;
 
   @media (max-width: 480px) {
+    width: auto;
     padding-left: 24px;
   }
 
