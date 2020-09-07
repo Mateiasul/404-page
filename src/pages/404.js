@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import SEO from "../components/seo"
 
 const PageWrapper = styled.div`
   margin: auto;
@@ -184,19 +185,10 @@ const PageFooter = styled.p`
 `
 
 export default function Home ({ data }) {
-  console.log(data);
-  // const sources = [
-  //   data.file.mobileImage.fixed,
-  //   {
-  //     ...data.file.desktopImage.fixed,
-  //     media: `(min-width: 480px)`,
-  //   },
-  // ]
-  // const sources = [data.file.mobileImage.fixed,data.file.mobileImage1.fluid,data.file.desktopImage.fixed]
-  // console.log(sources);
 
   return (
   <PageWrapper>
+    <SEO></SEO>
     <PageTitle>404 not found</PageTitle>
     <Wrapper>
       <ScareCrowWrapper>

@@ -7,8 +7,14 @@
 module.exports = {
 }
 module.exports = {
+  siteMetadata: {
+    title: "A simple 404",
+    description:
+      "A simple 404 made as some fun and practice adventure.",
+  },
   pathPrefix: "/404-page",
   plugins: [`gatsby-plugin-styled-components`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
